@@ -1,1 +1,25 @@
-<p>listaepisodios works!</p>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title class="text-center">Lista de Episodios con ID Impar</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="mat-elevation-z8">
+    <div class="episodes-container" style="width: 100%; display: flex; justify-content: center;">
+      <mat-table [dataSource]="episodes" style="max-width: 80%;">
+
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+          <mat-cell *matCellDef="let episode">{{ episode.id }}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef>Nombre del Episodio</mat-header-cell>
+          <mat-cell *matCellDef="let episode">{{ episode.name }}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="['id', 'name']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['id', 'name']"></mat-row>
+      </mat-table>
+    </div>
+  </mat-card-content>
+</mat-card>
+

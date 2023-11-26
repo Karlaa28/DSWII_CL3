@@ -1,1 +1,25 @@
-<p>estacionamiento works!</p>
+<div class="container" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <mat-card class="example-card">
+      <mat-card-header>
+          <mat-card-title class="text-center">Estacionamiento</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <mat-form-field class="full-width">
+              <mat-label>Horas</mat-label>
+              <input matInput type="number" id="horas" [(ngModel)]="tiempoHoras" min="0">
+          </mat-form-field>
+          <mat-form-field class="full-width">
+              <mat-label>Minutos</mat-label>
+              <input matInput type="number" id="minutos" [(ngModel)]="tiempoMinutos" min="0">
+          </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="calcularCosto()">Calcular Costo</button>
+      </mat-card-actions>
+      <mat-card-footer *ngIf="costoTotal > 0">
+          <h3>Costo Total: <span class="badge badge-success">${{ costoTotal }}</span></h3>
+      </mat-card-footer>
+  </mat-card>
+</div>
+
+

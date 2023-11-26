@@ -1,1 +1,32 @@
-<p>notas works!</p>
+<div class="container" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <mat-card class="example-card">
+      <mat-card-header>
+          <mat-card-title class="text-center">Calculo de Notas</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <mat-form-field class="full-width" style="margin-bottom: 10px;">
+              <mat-label>Nota 1</mat-label>
+              <input matInput type="number" id="nota1" [(ngModel)]="nota1" min="0" max="20">
+          </mat-form-field>
+          <mat-form-field class="full-width" style="margin-bottom: 10px;">
+              <mat-label>Nota 2</mat-label>
+              <input matInput type="number" id="nota2" [(ngModel)]="nota2" min="0" max="20">
+          </mat-form-field>
+          <mat-form-field class="full-width" style="margin-bottom: 10px;">
+              <mat-label>Nota 3</mat-label>
+              <input matInput type="number" id="nota3" [(ngModel)]="nota3" min="0" max="20">
+          </mat-form-field>
+          <mat-form-field class="full-width" style="margin-bottom: 10px;">
+              <mat-label>Nota 4</mat-label>
+              <input matInput type="number" id="nota4" [(ngModel)]="nota4" min="0" max="20">
+          </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="calcularPromedio()">Calcular Promedio</button>
+      </mat-card-actions>
+      <mat-card-footer *ngIf="promedio > 0">
+          <h3>Promedio: <span class="badge badge-success">{{ promedio }}</span></h3>
+      </mat-card-footer>
+  </mat-card>
+</div>
+

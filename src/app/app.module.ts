@@ -6,6 +6,18 @@ import { AppComponent } from './app.component';
 import { EstacionamientoComponent } from './estacionamiento/estacionamiento.component';
 import { NotasComponent } from './notas/notas.component';
 import { ListaepisodiosComponent } from './listaepisodios/listaepisodios.component';
+import { RouterModule, Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+const routes: Routes = [
+  { path: 'estacionamiento', component: EstacionamientoComponent },
+  { path: 'notas', component: NotasComponent },
+  { path: 'listaepisodios', component: ListaepisodiosComponent },
+];
+
 
 @NgModule({
   declarations: [
@@ -16,9 +28,17 @@ import { ListaepisodiosComponent } from './listaepisodios/listaepisodios.compone
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    HttpClientModule,
+
+    FormsModule,
+    RouterModule.forRoot(routes), // Corrección aquí
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
