@@ -25,7 +25,6 @@ export class ListaepisodiosComponent implements OnInit {
     const apiUrl = 'https://rickandmortyapi.com/api/episode';
 
     this.http.get(apiUrl).subscribe((data: any) => {
-      // Filtrar episodios con ID impar
       this.episodes = data.results.filter((episode: Episode) => episode.id % 2 !== 0);
     });
   }

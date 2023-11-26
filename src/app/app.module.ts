@@ -34,7 +34,7 @@ const routes: Routes = [
     HttpClientModule,
 
     FormsModule,
-    RouterModule.forRoot(routes), // Corrección aquí
+    RouterModule.forRoot(routes),
     
   ],
   providers: [],
